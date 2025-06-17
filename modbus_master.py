@@ -47,10 +47,6 @@ class ModbusRTU:
         response = self.read_response(expected_bytes)
         if not response or len(response) < expected_bytes:
             return None
-        data = response[3:-2]  # Bỏ header và CRC
-        result = []
-        for i in range(0, len(data), 2):
-            val = (data[i] << 8) + data[i + 1]
-            result.append(val)
-        return result
+
+        return response
 
