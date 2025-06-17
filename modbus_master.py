@@ -48,5 +48,5 @@ class ModbusRTU:
         if not response or len(response) < expected_bytes:
             return None
 
-        return expected_bytes
+        return slave_addr
 
